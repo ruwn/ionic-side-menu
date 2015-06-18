@@ -1,11 +1,14 @@
 <ion-view view-title="Mails">
   <ion-content>
-    <h1> WICHTIG </h1>
+    <h1> folderName: </h1>
     {{folderName}}
+    <h1>mails:</h1>
+    {{mails}}
 
+    <button ng-click="selectFolder('new')">mails</button>
 
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="mail in mails" type="item-text-wrap" href="#/tab/chats">
+      <ion-item class="item-remove-animate item-avatar item-icon-right"  ng-repeat="mail in mails" type="item-text-wrap" href="#/tab/chats">
         <h2>{{mail.subject}}</h2>
         <p>{{mail.sender}}</p>
         <i class="icon ion-chevron-right icon-accessory"></i>

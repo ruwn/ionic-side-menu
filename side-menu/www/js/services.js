@@ -54,7 +54,8 @@ angular.module('starter.services', [])
         },
         //Get mails by folder
         getByFolder: function(folder) {
-          return $http.get('http://localhost:3000/mailapi/shbyfolder/' + folder);
+          var url = 'http://localhost:3000/mailapi/shbyfolder/' + folder;
+          return $http.get(url);
         },
         //Get mail by _id
         getMail: function(mail) {

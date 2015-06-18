@@ -27,8 +27,8 @@ angular.module('starter.controllers', [])
   };
 })
 .controller('mailController', function ($scope, $http, factoryMail, $stateParams) {
-      console.log("mailController-----: "+$stateParams.folderId);
       $scope.folderName = $stateParams.folderId;
+      $scope.mails = $stateParams.mails;
 
       factoryMail.getFolders().
       success(function (data, status, headers, config) {
@@ -37,21 +37,13 @@ angular.module('starter.controllers', [])
       });
 
       $scope.selectFolder = function(folder) {
-        console.log("mailController.selectFolder.stateParams "+$stateParams);
+          console.log($scope);
 
         $scope.selectedFolder = folder;
-        factoryMail.getByFolder(folder).success(function (data) {
+        factoryMail.getByFolder(folder).success(function (data,status, headers, config ) {
           $scope.mails = data;
-          console.log("mailController.selectFolder: " + $scope.selectedFolder);
-        })
+          $stateParams.mails= data;
+          console.log($scope.mails);
+        });
       };
-      // factoryMail.getByFolder().success(function(data){
-      //   $scope.mails = data;
-      //     }).error(function(data, status) {
-      //       console.log("error: " ,data, status);
-      //       $scope.folders = [];
-      //     });
-      //   }).error(function(data, status) {
-      // });
-
 });
