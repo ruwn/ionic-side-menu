@@ -1,5 +1,6 @@
 <ion-view view-title="Folder">
     <ion-content>
+        {{debugOutput}}
         <ion-list>
             <div ng-repeat="folder in folders">
                 <ion-item ng-click="selectFolder(folder)" class="item-thumbnail-left" href="#/tab/mails/{{folder}}">
