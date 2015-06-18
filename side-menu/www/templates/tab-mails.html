@@ -1,23 +1,25 @@
 <ion-view view-title="Mails">
-  <ion-content>
-    <h1> folderName: </h1>
-    {{folderName}}
-    <h1>mails:</h1>
-    {{mails}}
+    <ion-content>
+        <h1> folderName: </h1>
+        {{folderName}}
+        <h1>mails:</h1>
+        <button ng-click="selectFolder(folderName)">mails</button>
 
-    <button ng-click="selectFolder('new')">mails</button>
+        <ion-list>
+            <div>
+                <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="mail in mails"
+                          type="item-text-wrap" href="#/tab/chats">
+                    <h2>{{mail.subject}}</h2>
+                    <p>{{mail.sender}}</p>
+                    <p>{{mail.date}}</p>
+                    <i class="icon ion-chevron-right icon-accessory"></i>
 
-    <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right"  ng-repeat="mail in mails" type="item-text-wrap" href="#/tab/chats">
-        <h2>{{mail.subject}}</h2>
-        <p>{{mail.sender}}</p>
-        <i class="icon ion-chevron-right icon-accessory"></i>
+                    <ion-option-button class="button-assertive" ng-click="remove(chat)">
+                        Delete
+                    </ion-option-button>
+                </ion-item>
+                </div>
+        </ion-list>
 
-        <ion-option-button class="button-assertive" ng-click="remove(chat)">
-          Delete
-        </ion-option-button>
-      </ion-item>
-    </ion-list>
-
-  </ion-content>
+    </ion-content>
 </ion-view>

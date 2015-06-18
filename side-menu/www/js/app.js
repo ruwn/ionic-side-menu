@@ -68,17 +68,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
-/**
-  .state('tab.mails', {
-    url: '/mails',
-    views: {
-      'tab-mails': {
-        templateUrl: 'templates/tab-mails.html',
-        controller: 'mailController'
-      }
-    }
-  })
-**/
+
   .state('tab.folder', {
     url: '/folder',
     views: {

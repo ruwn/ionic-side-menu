@@ -28,7 +28,6 @@ angular.module('starter.controllers', [])
 })
 .controller('mailController', function ($scope, $http, factoryMail, $stateParams) {
       $scope.folderName = $stateParams.folderId;
-      $scope.mails = $stateParams.mails;
 
       factoryMail.getFolders().
       success(function (data, status, headers, config) {
@@ -40,9 +39,8 @@ angular.module('starter.controllers', [])
           console.log($scope);
 
         $scope.selectedFolder = folder;
-        factoryMail.getByFolder(folder).success(function (data,status, headers, config ) {
+        factoryMail.getByFolder(folder).success( function (data,status, headers, config ) {
           $scope.mails = data;
-          $stateParams.mails= data;
           console.log($scope.mails);
         });
       };

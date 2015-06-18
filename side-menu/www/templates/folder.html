@@ -1,3 +1,14 @@
-<ion-list >
-    <ion-item ng-repeat="folder in folders" ng-click="selectFolder(folder)" class="item-thumbnail-left" href="#/tab/mails/{{folder}}"> {{folder}}</ion-item>
-</ion-list>
+<ion-view view-title="Folder">
+    <ion-content>
+        <ion-list>
+            <div ng-repeat="folder in folders">
+                <ion-item ng-click="selectFolder(folder)" class="item-thumbnail-left" href="#/tab/mails/{{folder}}">
+                    {{folder}}
+                </ion-item>
+                <button ng-click="removeFolder(folder)">
+                    Delete {{folder}}
+                </button>
+            </div>
+        </ion-list>
+    </ion-content>
+</ion-view>
