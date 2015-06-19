@@ -1,17 +1,16 @@
 <ion-view view-title="Mails">
     <ion-content>
         <h1> folderName:</h1> {{selectedFolder}}
-
-
         <ion-toggle ng-model="shouldShowDelete">
             Show Delete?
         </ion-toggle>
         <ion-list  show-delete="shouldShowDelete">
-            <div>
-                <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="mail in mails" type="item-text-wrap">
+            <div ng-repeat="mail in mails">
+                <ion-item ng-click="selectMailById(mail._id)" class="item-remove-animate item-avatar item-icon-right" href="#/tab/mail/{{mailId}}">
                     <h2>{{mail.subject}}</h2>
                     <p>{{mail.sender}}</p>
                     <p>{{mail.date}}</p>
+                    <p>{{mail._id}}</p>
                     <i class="icon ion-chevron-right icon-accessory"></i>
                     <ion-delete-button class="ion-minus-circled" ng-click="removeMail(mail)"></ion-delete-button>
                 </ion-item>

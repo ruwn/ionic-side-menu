@@ -11,8 +11,10 @@ angular.module('starter.services', [])
           return $http.get(url);
         },
         //Get mail by _id
-        getMail: function(mail) {
-          return $http.get('http://localhost:3000/mailapi/show/' + mail._id);
+        getMail: function(mailID) {
+          var url='http://localhost:3000/mailapi/show/' + mailID;
+          console.log("factory.betMail(): "+url);
+          return $http.get(url);
         },
         //Delete mail by _id
         deleteMail: function(mail) {

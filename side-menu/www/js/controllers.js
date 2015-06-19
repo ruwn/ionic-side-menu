@@ -7,6 +7,9 @@ function getAllFolders(factoryMail, $scope) {
 
 function getAllMailsByFolder($scope, folder, factoryMail) {
     $scope.selectedFolder = folder;
+    $scope.mails={};
+    $scope.mail={};
+
     factoryMail.getByFolder(folder).success(function (data, status, headers, config) {
         $scope.mails = data;
         console.log($scope.mails);
@@ -41,6 +44,16 @@ angular.module('starter.controllers', [])
             });
             getAllMailsByFolder($scope, $scope.selectedFolder, factoryMail);
         };
+
+        $scope.selectMailById= function(mailId) {
+            console.log("selectMailById" +mailId);
+            $scope.mailId = mailId;
+            factoryMail.getMail($scope.mailId).success(function (data,status,headers, config) {
+                $scope.mail= data;
+                console.log("selectMailById :" +$scope.mailId);
+                console.log($scope.mail);
+            });
+        }
 
 
     });
