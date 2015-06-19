@@ -16,7 +16,9 @@ angular.module('starter.services', [])
         },
         //Delete mail by _id
         deleteMail: function(mail) {
-          return $http.delete('http://localhost:3000/mailapi/deletemail/' + mail._id);
+          var url = 'http://localhost:3000/mailapi/deletemail/' + mail._id;
+          console.log("deleteMail(): "+url);
+          return $http.delete(url);
         },
         //Delete folder by foldername
         deleteFolder: function(folder) {
