@@ -21,7 +21,7 @@ angular.module('starter.controllers', [])
     .controller('mailController', function ($scope, $http, factoryMail, $stateParams) {
         console.log($scope.selectedFolder);
 
-        $scope.folderName = $stateParams.folderId;
+       // $scope.folderName = $stateParams.folderId;
 
 
         getAllFolders(factoryMail, $scope);
@@ -69,6 +69,13 @@ angular.module('starter.controllers', [])
             });
             getAllFolders(factoryMail, $scope);
         };
+
+        $scope.sentNewMail= function (mail) {
+            factoryMail.newMail(mail).success(function (data,status,headers,config) {
+                $scope.debugOutput=data;
+            });
+            getAllFolders(factoryMail, $scope);
+        }
 
 
     });

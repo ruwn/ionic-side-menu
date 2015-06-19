@@ -1,0 +1,13 @@
+<ion-view view-title="NewMail">
+    <ion-content>
+        <button ng-click="sentNewMail(mail)">send mail</button>
+        <h1>Subject: </h1> <input ng-model="mail.subject"/>
+        <h2>Sender: </h2>  <input ng-model="mail.sender"/>
+        <h2>Reciever: </h2> <input ng-model="mail.recipients"/>
+        <h2>Text: </h2> <input ng-model="mail.text"/>
+        {{mail.subject}}
+        {{mail.sender}}
+        {{mail.recipients}}
+        {{mail.text}}
+    </ion-content>
+</ion-view>

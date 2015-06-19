@@ -59,7 +59,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
                         templateUrl: 'templates/tab-mail.html'
                     }
                 }
-            });
+            })
+            .state('tab.newmail', {
+                url: '/newmail',
+                views: {
+                    'tab-newmail': {
+                        templateUrl: 'templates/tab-newmail.html'
+                    }
+                }
+            })
+
 
         // if none of the above states are matched, use this as the fallback
         $urlRouterProvider.otherwise('/tab/folder');

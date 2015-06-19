@@ -36,14 +36,13 @@ angular.module('starter.services', [])
         },
         //Create new mail
         newMail: function(mail) {
-          var recipients = mail.rec.split(';');
+          var recipients = mail.recipients.split(';');
           var paras = {
             sender: mail.sender,
             recipients: recipients,
             text: mail.text,
             subject: mail.subject,
-            date: mail.date,
-            folder: mail.folder
+            date: mail.date
           };
           console.log("create mail:" );
           console.log(paras);
