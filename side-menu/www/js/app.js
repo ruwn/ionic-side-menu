@@ -35,36 +35,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     abstract: true,
     templateUrl: "templates/tabs.html"
   })
-
-  // Each tab has its own nav history stack:
-
-  //.state('tab.dash', {
-  //  url: '/dash',
-  //  views: {
-  //    'tab-dash': {
-  //      templateUrl: 'templates/tab-dash.html',
-  //      controller: 'DashCtrl'
-  //    }
-  //  }
-  //})
-  //
-  //
-  //.state('tab.chat-detail', {
-  //  url: '/chats/:chatId',
-  //  views: {
-  //    'tab-chats': {
-  //      templateUrl: 'templates/chat-detail.html',
-  //      controller: 'ChatDetailCtrl'
-  //    }
-  //  }
-  //})
-
   .state('tab.mails', {
     url: '/mails/:folderId',
     views: {
       'tab-mails': {
-        templateUrl: 'templates/tab-mails.html',
-        controller: 'mailController'
+        templateUrl: 'templates/tab-mails.html'
       }
     }
   })
@@ -73,8 +48,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/folder',
     views: {
       'tab-folder': {
-        templateUrl: 'templates/folder.html',
-        controller: 'mailController'
+        templateUrl: 'templates/folder.html'
       }
     }
   });
