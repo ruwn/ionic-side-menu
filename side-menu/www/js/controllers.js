@@ -63,7 +63,12 @@ angular.module('starter.controllers', [])
             getAllFolders(factoryMail, $scope);
         };
 
-
+        $scope.rnFolder = function(oldName, newName) {
+            factoryMail.renameFolder(oldName,newName).success(function (data,status,headers,config) {
+                $scope.debugOutput=data;
+            });
+            getAllFolders(factoryMail, $scope);
+        };
 
 
     });
