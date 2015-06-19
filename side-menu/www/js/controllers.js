@@ -53,7 +53,17 @@ angular.module('starter.controllers', [])
                 console.log("selectMailById :" +$scope.mailId);
                 console.log($scope.mail);
             });
-        }
+        };
+
+        $scope.moveMailToFolder =function(mail, newFolder) {
+            factoryMail.moveMail(mail,newFolder).success(function (data,status,headers, config) {
+                $scope.debugOutput=data;
+                console.log("mail Moved");
+            });
+            getAllFolders(factoryMail, $scope);
+        };
+
+
 
 
     });

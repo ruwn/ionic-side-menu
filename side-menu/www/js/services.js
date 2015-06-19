@@ -32,7 +32,7 @@ angular.module('starter.services', [])
         },
         //Move mail by foldername
         moveMail: function(mail, newName) {
-          return $http.put('http://localhost:3000/mailapi/mailapi/movemail/' + mail._id, {folder: newName});
+          return $http.put('http://localhost:3000/mailapi/movemail/' + mail._id, {folder: newName});
         },
         //Create new mail
         newMail: function(mail) {
@@ -47,7 +47,7 @@ angular.module('starter.services', [])
           };
           console.log("create mail:" );
           console.log(paras);
-          return $http.post('http://localhost:3000/mailapi/mailapi/createmail', paras);
+          return $http.post('http://localhost:3000/mailapi/createmail', paras);
         }
       };
     });

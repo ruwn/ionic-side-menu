@@ -1,5 +1,7 @@
 <ion-view view-title="Mail">
     <ion-content>
+        <input ng-model="newMailFolder" /> <button ng-click="moveMailToFolder(mail[0],newMailFolder)" href="#/tab/folder/">move</button>
+
         <h1>Subject: </h1> {{mail[0].subject}}
         <h2>Sender: </h2>{{mail[0].sender}}
         <h2>Text: </h2>{{mail[0].text}}
