@@ -1,14 +1,16 @@
 <ion-view view-title="Folder">
     <ion-content>
         {{debugOutput}}
-        <ion-list>
+        <ion-toggle ng-model="shouldShowDelete">
+            Show Delete?
+        </ion-toggle>
+        <ion-list show-delete="shouldShowDelete">
             <div ng-repeat="folder in folders">
                 <ion-item ng-click="selectFolder(folder)" class="item-thumbnail-left" href="#/tab/mails/{{folder}}">
                     {{folder}}
+                    <ion-delete-button class="ion-minus-circled" ng-click="removeFolder(folder)"></ion-delete-button>
                 </ion-item>
-                <button ng-click="removeFolder(folder)">
-                    Delete {{folder}}
-                </button>
+
             </div>
         </ion-list>
     </ion-content>
